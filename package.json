@@ -15,6 +15,9 @@
     "type": "git",
     "url": "https://michael3rown@bitbucket.org/michael3rown/access-winter-park.git"
   },
+  "bugs": {
+    "url": "https://bitbucket.org/michael3rown/access-winter-park/issues"
+  },
   "homepage": "https://www.accesswinterpark.com",
   "devDependencies": {
     "gulp": "^3.9.1",
