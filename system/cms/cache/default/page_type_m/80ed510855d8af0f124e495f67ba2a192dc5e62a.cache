@@ -1,0 +1,107 @@
+a:3:{s:16:"__cache_contents";O:8:"stdClass":16:{s:2:"id";s:2:"12";s:4:"slug";s:4:"home";s:5:"title";s:4:"Home";s:11:"description";s:22:"For the homepage ONLY.";s:9:"stream_id";s:2:"19";s:10:"meta_title";s:0:"";s:13:"meta_keywords";N;s:16:"meta_description";s:0:"";s:4:"body";s:4979:"<!-- First Row (Featured Properties) -->
+		<div id="firstrow-wrapper" class="position-relative">
+			<div class="container">
+				
+				<!-- Content -->
+				<div class="row">
+					<div id="first-row-content" class="text-center col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-12 col-md-12 col-lg-12">
+						{{ session:messages success="success-message" notice="notice-message" error="error-message" }}
+						{{ first_row_content }}
+					</div>
+				</div>
+				<!-- /Content -->
+				
+				<!-- Featured Properties -->
+				<div class="row">
+					{{ featured_properties limit="4" sort="asc" disable="property_slug|street_address|city|state|zip_code|property_meta_description|property_hero|property_average_cost_per_night|property_pet_friendly|property_smoking|property_handicap_accessible|property_slideshow|property_overview|property_amenities|property_rates_fees" }}
+					<div class="featured-property text-center col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-6 col-md-3 col-lg-3">
+						<a class="margin-auto" style="display: block;" href="/property/{{ property_slug }}"><img class="img-responsive" src="{{ property_feature_image:image }}" alt="" /></a>
+						<p>
+							<a href="/property/{{ property_slug }}">{{ property_name }}</a><br />
+							Sleeps up to {{ property_sleeps }}<br />
+							{{ property_bedrooms }} Bdrm. / {{ property_bathrooms }} Bath<br />
+							{{ if property_hot_tub:key == 'private' || property_hot_tub:key == 'public' }}{{ property_hot_tub:value }} Hot Tub{{ endif}}
+						</p>
+					</div>
+					{{ /featured_properties }}
+				</div>
+				<!-- /Featured Properties -->
+				
+				<!-- Button -->
+				{{ if first_row_button_link && first_row_button_text }}
+				<div class="row">
+					<div class="text-center col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-12 col-md-12 col-lg-12">
+						<a class="btn btn-side-column btn-link" href="{{ first_row_button_link }}">{{ first_row_button_text }}</a>
+					</div>
+				</div>
+				{{ endif }}
+				<!-- /Button -->
+				
+			</div>
+		</div>
+		<!-- /First Row (Featured Properties) -->
+		
+		<!-- Second Row (Snowy Trees Background) -->
+		<div id="secondrow-wrapper" class="position-relative">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-offset-1 col-xs-10 col-sm-10 col-md-offset-0 col-md-6 col-lg-6">
+						<img class="img-responsive margin-auto" src="{{ second_row_feature:feature_image:image }}" alt="" />
+					</div>
+					<div class="col-xs-offset-1 col-xs-10 col-sm-10 col-md-offset-0 col-md-6 col-lg-6">
+						<h2>{{ second_row_feature:feature_title }}</h2>
+						<p>{{ second_row_feature:feature_text }}</p>
+						<p><a class="btn btn-side-column btn-link" href="{{ second_row_feature:feature_link_url }}">{{ second_row_feature:feature_button_text }}</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /Second Row (Snowy Trees Background) -->
+		
+		<!-- Third Row (Blue Canvas Background) -->
+		<div id="thirdrow-wrapper" class="position-relative">
+			<div class="container">
+				<div class="row">
+					
+					<!-- Snow Report -->
+					<div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-6 col-md-3 col-lg-3">
+						<img class="img-responsive margin-auto" src="{{ snow_report_image:image }}" alt="" />
+					</div>
+					<div class="thirdrow-content col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-6 col-md-3 col-lg-3">
+						<h4>{{ snow_report_title }}</h4>
+						<p>{{ snow_report_content }}</p>
+						<p><a class="btn btn-blue-canvas btn-link" href="{{ snow_report_button_link }}" target="_blank">{{ snow_report_button_text }}</a></p>
+					</div>
+					<!-- /Snow Report -->
+					
+					<div class="clearfix visible-xs-block visible-sm-block"></div>
+					
+					<!-- Feature -->
+					<div class="thirdrow-feature col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-6 col-md-3 col-lg-3">
+						<img class="img-responsive margin-auto" src="{{ third_row_feature:feature_image:image }}" alt="" />
+					</div>
+					<div class="thirdrow-feature thirdrow-content col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-6 col-md-3 col-lg-3">
+						<h4>{{ third_row_feature:feature_title }}</h4>
+						<p>{{ third_row_feature:feature_text }}</p>
+						<p><a class="btn btn-blue-canvas btn-link" href="{{ third_row_feature:feature_link_url }}">{{ third_row_feature:feature_button_text }}</a></p>
+					</div>
+					<!-- /Feature -->
+					
+				</div>
+			</div>
+		</div>
+		<!-- /Third Row (Blue Canvas Background) -->
+		
+		<!-- Last Row -->
+		<div id="lastrow-wrapper" class="position-relative">
+			<div class="container">
+				<div class="row">
+					<div class="text-center col-xs-offset-1 col-xs-10 col-sm-10 col-md-offset-0 col-md-12 col-lg-offset-1 col-lg-10">
+						{{ if last_row_image }}<img class="img-responsive margin-auto" src="{{ last_row_image:image }}" alt="" />{{ endif }}
+						{{ last_row_content }}
+						<p><a class="btn btn-side-column btn-link" href="{{ last_row_button_link }}">{{ last_row_button_text }}</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /Last Row -->";s:3:"css";s:0:"";s:2:"js";s:0:"";s:12:"theme_layout";s:9:"open.html";s:10:"updated_on";s:10:"1471382753";s:13:"save_as_files";s:1:"n";s:13:"content_label";s:0:"";s:11:"title_label";s:0:"";}s:15:"__cache_created";i:1476947368;s:20:"__cache_dependencies";a:0:{}}

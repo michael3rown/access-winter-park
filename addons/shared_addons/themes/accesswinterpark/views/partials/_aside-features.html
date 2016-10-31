@@ -1,0 +1,16 @@
+						<!-- Featured Information -->
+						{{ if {url:segments segment="1"} == 'details' }}{{ streams:features sort="random" limit="2" }}{{ elseif {url:segments segment="1"} == 'property'  }}{{ streams:features sort="random" limit="3" }}{{ endif }}
+						<div class="row aside-featured-info">
+							{{ if feature_image }}
+							<div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-6 col-md-12 col-lg-12">
+								<img class="img-responsive" src="{{ feature_image:image }}" alt="" />
+							</div>
+							{{ endif }}
+							<div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-6 col-md-12 col-lg-12">
+								<h4>{{ feature_title }}</h4>
+								<p>{{ feature_text }}</p>
+								<p><a href="{{ feature_link_url }}">{{ feature_link_text }}</a></p>
+							</div>
+						</div>
+						{{ if {url:segments segment="1"} == 'details' || {url:segments segment="1"} == 'property' }}{{ /streams:features }}{{ endif }}
+						<!-- /Featured Information -->

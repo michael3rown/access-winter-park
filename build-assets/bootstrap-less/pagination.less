@@ -1,0 +1,35 @@
+//
+// Pagination (multiple pages)
+// --------------------------------------------------
+.pagination {
+  display: block;
+  text-align: center;
+  margin: 43px 0 0;
+
+  > ul {
+    list-style: none;
+		padding: 0;
+		margin: 0 auto;
+
+    > li {
+      display: inline;
+      padding: 0 8px;
+
+      &:first-child { padding-left: 0; }
+      &:last-child { padding-right: 0; }
+    }
+  }
+}
+
+// Sizing
+// --------------------------------------------------
+
+// Large
+.pagination-lg {
+  .pagination-size(@padding-large-vertical; @padding-large-horizontal; @font-size-large; @line-height-large; @border-radius-large);
+}
+
+// Small
+.pagination-sm {
+  .pagination-size(@padding-small-vertical; @padding-small-horizontal; @font-size-small; @line-height-small; @border-radius-small);
+}

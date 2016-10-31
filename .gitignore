@@ -1,0 +1,10 @@
+# Standard ignores
+.DS_Store
+.localized
+Thumbs.db
+
+# Ignore database settings
+system/cms/config/database.*
+
+# Ignore CMS logs
+system/cms/logs/log-*.php

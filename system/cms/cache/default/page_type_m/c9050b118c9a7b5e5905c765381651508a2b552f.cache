@@ -1,0 +1,59 @@
+a:3:{s:16:"__cache_contents";O:8:"stdClass":16:{s:2:"id";s:1:"9";s:4:"slug";s:8:"listings";s:5:"title";s:8:"Listings";s:11:"description";s:44:"For organizing & displaying "Listings" data.";s:9:"stream_id";s:2:"17";s:10:"meta_title";s:0:"";s:13:"meta_keywords";N;s:16:"meta_description";s:0:"";s:4:"body";s:2179:"<!-- Main -->
+					<main class="col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10 col-md-offset-0 col-md-8 col-md-push-4 col-lg-offset-1 col-lg-8 col-lg-push-3">
+					
+						<!-- Page Content -->
+						{{ listings_page_content }}
+						<!-- /Page Content -->
+
+						<!-- Listings -->
+						{{ listings_select sort=listings_order:key order_by="listing_title" }}
+						<div class="listing-item row">
+							
+							<!-- Image -->
+							<div class="listing-image col-xs-12 col-sm-3 col-md-3 col-lg-3">
+								<img class="img-responsive" src="{{ listing_image:image }}" alt="" />
+							</div>
+							<!-- /Image -->
+							
+							<!-- Content -->
+							<div class="listing-content col-xs-12 col-sm-9 col-md-9 col-lg-9">
+								<h4>{{ listing_title }}</h4>
+								{{ limit:words text='{{ listing_content }}' words='30' ending=' ... <a href="/details/{{ listing_slug }}">Read More</a>' }}
+							</div>
+							<!-- /Content -->
+						
+						</div>
+						{{ /listings_select }}
+						<!-- /Listings -->
+					
+					</main>
+					<!-- /Main -->
+					
+					<!-- Aside (Default) -->
+					<aside id="default" class="col-xs-12 col-sm-12 col-md-4 col-md-pull-8 col-lg-3 col-lg-pull-9">
+						
+						{{ if listings_display_properties_subnavigation:key == 'yes' }}{{ theme:partial name="aside-properties-subnav" }}{{ endif }}
+						
+						{{ if listings_display_features:key == 'yes' }}
+
+						<!-- Featured Information -->
+						{{ listings_features_select sort="random" order_by="feature_title" }}
+						<div class="row aside-featured-info">
+							{{ if feature_image }}
+							<div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-6 col-md-12 col-lg-12">
+								<img class="img-responsive" src="{{ feature_image:image }}" alt="" />
+							</div>
+							{{ endif }}
+							<div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-6 col-md-12 col-lg-12">
+								<h4>{{ feature_title }}</h4>
+								<p>{{ feature_text }}</p>
+								<p><a href="{{ feature_link_url }}">{{ feature_link_text }}</a></p>
+							</div>
+						</div>
+						{{ /listings_features_select }}
+						<!-- /Featured Information -->
+
+						{{ endif }}
+					
+					</aside>
+					<!-- /Aside (Default) -->";s:3:"css";s:0:"";s:2:"js";s:0:"";s:12:"theme_layout";s:12:"default.html";s:10:"updated_on";s:10:"1464381627";s:13:"save_as_files";s:1:"n";s:13:"content_label";s:0:"";s:11:"title_label";s:0:"";}s:15:"__cache_created";i:1476977621;s:20:"__cache_dependencies";a:0:{}}

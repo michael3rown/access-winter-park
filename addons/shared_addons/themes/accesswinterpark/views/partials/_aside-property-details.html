@@ -1,0 +1,53 @@
+					<!-- Aside (Property Preview) -->
+					<aside id="property-preview" class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-12 col-md-4 col-lg-3">
+						
+						<!-- Property Preview Info -->
+						<div id="property-preview-info">
+							<div class="row">
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">Property Preview</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">Avg. Cost Per Night: <span>$775</span></div>
+								<div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">Bedrooms: <span>5</span></div>
+							</div>
+							<div class="row">
+								<div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">Sleeps: <span>10</span></div>
+								<div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">Bathrooms: <span>4.5</span></div>
+							</div>
+							<div class="row">
+								<div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">Hot Tub: <span>Available</span></div>
+								<div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">Pet Friendly: <span>Yes</span></div>
+							</div>
+							<div class="row">
+								<div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">Smoking: <span>No</span></div>
+								<div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">Accessibility: <span>Yes</span></div>
+							</div>
+						</div>
+						<!-- /Properties Preview Info -->
+						
+						<!-- Buttons -->
+						<div class="row">
+							<div class="col-xs-12 col-sm-6 col-md-12 col-lg-12"><a class="btn btn-default btn-link" href="#">Book</a></div>
+							<div class="col-xs-12 col-sm-6 col-md-12 col-lg-12"><a class="btn btn-default btn-link" href="#">Inquire</a></div>
+						</div>
+						<!-- /Buttons -->
+						
+						<!-- Featured Information (md & lg) -->
+						{{ streams:features sort="random" limit="3" }}
+						<div class="row aside-featured-info">
+							{{ if feature_image }}
+							<div class="col-md-12 col-lg-12">
+								<img class="img-responsive" src="{{ feature_image:image }}" alt="" />
+							</div>
+							{{ endif }}
+							<div class="col-md-12 col-lg-12">
+								<h4>{{ feature_title }}</h4>
+								<p>{{ feature_text }}</p>
+								<p><a class="btn btn-default btn-link" href="{{ feature_link_url }}">{{ feature_button_text }}</a></p>
+							</div>
+						</div>
+						{{ /streams:features }}
+						<!-- /Featured Information (md & lg) -->
+					
+					</aside>
+					<!-- /Aside (Property Preview) -->

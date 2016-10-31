@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	
+	<head>
+		
+		{{ theme:partial name="head" }}
+		
+	</head>
+	
+	<body class="{{ if page:type_id == '9' }}listing{{ elseif page:type_id == '13' }}checkfront{{ elseif page:type_id == '19' }}properties{{ else }}default{{ endif }}">
+		
+		{{ theme:partial name="google-tag-manager" }}
+		
+		{{ theme:partial name="navigation" }}
+		
+		{{ theme:partial name="header" }}
+		
+		{{ theme:partial name="header-hero" }}
+		
+		<!-- Content -->
+		<div id="main-wrapper" class="position-relative">
+			<div class="container">
+				<div class="row">
+					
+					{{ session:messages success="success-message" notice="notice-message" error="error-message" }}
+
+					{{ template:body }}
+				
+				</div>
+			</div>
+		</div>
+		<!-- /Content -->
+		
+		{{ theme:partial name="footer" }}
+		
+		{{ theme:partial name="footer-copyright" }}
+		
+		{{ theme:partial name="footer-scripts" }}
+	
+	</body>
+
+</html>

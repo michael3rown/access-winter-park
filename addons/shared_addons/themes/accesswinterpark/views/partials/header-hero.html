@@ -1,0 +1,12 @@
+		<!-- Hero -->
+		<div id="hero-wrapper" class="position-relative text-center" style="background-image: url({{ if page:type_id == '9' }}{{ files:image_url id=page:listings_page_hero:id }}{{ elseif page:type_id == '10' }}{{ files:image_url id='b82fcceec2bca13' }}{{ elseif page:type_id == '13' }}{{ files:image_url id=page:checkfront_page_hero:id }}{{ elseif page:type_id == '14' || page:type_id == '15' || page:type_id == '18' }}{{ files:image_url id=page:page_hero:id }}{{ elseif page:type_id == '17' }}{{ streams:properties limit='1' include_by='property_slug' include='[segment_2]' }}{{ files:image_url id=property_hero:id }}{{ /streams:properties }}{{ elseif page:type_id == '19' }}{{ files:image_url id=page:properties_page_hero:id }}{{ elseif {url:segments segment='1'} == 'blog' }}{{ url:site }}files/large/d84bcb65f70ab3842798f07007601dfd.jpg{{ elseif {url:segments segment='1'} == 'news' }}{{ url:site }}files/large/d84bcb65f70ab3842798f07007601dfd.jpg{{ elseif {url:segments segment='1'} == 'article' }}{{ url:site }}files/large/d84bcb65f70ab3842798f07007601dfd.jpg{{ else }}{{ files:image_url id=page:hero:id }}{{ endif }});">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-offset-1 col-xs-10 col-sm-10 col-md-offset-0 col-md-12 col-lg-12">
+						<h1>
+							{{ if page:type_id == '10' }}{{ streams:listings limit="1" include_by="listing_slug" include="[segment_2]" }}{{ listing_title }}{{ /streams:listings }}{{ elseif page:type_id == '17' }}{{ streams:properties limit="1" include_by="property_slug" include="[segment_2]" }}{{ property_name }}{{ /streams:properties }}{{ elseif page:type_id == '21' }}{{ streams:news_posts limit="1" include_by="news_post_slug" include="[segment_2]" }}{{ news_post_title }}{{ /streams:news_posts }}{{ elseif {url:segments segment='1'} == 'blog' }}Access Winter Park Blog{{ else }}{{ page:title }}{{ endif }}</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /Hero -->

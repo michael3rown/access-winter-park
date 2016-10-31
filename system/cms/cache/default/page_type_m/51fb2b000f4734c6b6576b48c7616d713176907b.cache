@@ -1,0 +1,255 @@
+a:3:{s:16:"__cache_contents";O:8:"stdClass":16:{s:2:"id";s:2:"17";s:4:"slug";s:8:"property";s:5:"title";s:8:"Property";s:11:"description";s:121:"DO NOT USE this layout. It functions based upon data from a reffering URL. It displays an individual "Property" data set.";s:9:"stream_id";s:2:"24";s:10:"meta_title";s:0:"";s:13:"meta_keywords";N;s:16:"meta_description";s:0:"";s:4:"body";s:12251:"{{ streams:properties limit="1" include_by="property_slug" include="[segment_2]" }}
+		<div id="main-wrapper" class="position-relative">
+			<div class="container">
+				<div class="row">
+					
+					{{ session:messages success="success-message" notice="notice-message" error="error-message" }}
+
+					<!-- Aside (Property Preview) -->
+					<aside id="property-preview" class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-12 col-md-4 col-lg-3">
+						
+						<!-- Property Preview Info -->
+						<div id="property-preview-info">
+							<div class="row">
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">Property Preview</div>
+							</div>
+							<div class="row">
+								<!--<div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">Avg. Cost Per Night: <span>{{ property_average_cost_per_night }}</span></div>-->
+								<div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">Bedrooms: <span>{{ property_bedrooms }}</span></div>
+								<div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">Sleeps: <span>{{ property_sleeps }}</span></div>
+							</div>
+							<div class="row">
+								<div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">Bathrooms: <span>{{ property_bathrooms }}</span></div>
+								<div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">Hot Tub: <span>{{ property_hot_tub:value }}</span></div>
+							</div>
+							<div class="row">
+								<div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">Pet Friendly: <span>{{ property_pet_friendly:value }}</span></div>
+								<div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">Smoking: <span>{{ property_smoking:value }}</span></div>
+							</div>
+							<div class="row">
+								<div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">Accessibility: <span>{{ property_handicap_accessible:value }}</span></div>
+							</div>
+						</div>
+						<!-- /Property Preview Info -->
+						
+						<!-- Buttons -->
+						<div class="row">
+							{{ if property_checkfront_item_id }}<div class="col-xs-12 col-sm-6 col-md-12 col-lg-12"><a class="btn btn-side-column btn-link" href="#book-this-property">Book Now</a></div>{{ endif }}
+							<div class="col-xs-12 col-sm-6 col-md-12 col-lg-12"><a class="btn btn-side-column btn-link" data-toggle="collapse" href="#property-inquiry-form" aria-expanded="false" aria-controls="property-inquiry-form">Inquire</a></div>
+						</div>
+						<!-- /Buttons -->
+						
+						<!-- Property Inquiry Form -->
+						<div id="property-inquiry-form" class="row collapse">
+							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								{{ streams:form
+									stream="property_inquiry"
+									mode="new"
+									required="*"
+									error_start="<p class=\"red\">("
+									error_end=")</p>"
+									notify_a="accesswinterpark@me.com"
+									notify_from_a="noreply@accesswinterpark.com|Access Winter Park"
+									notify_template_a="property-inquiry"
+									return="/property-inquiry-thank-you"
+									success_message="Your message has been sent successfully. Thank you."
+									failure_message="There were errors with the information you submitted. All fields are required. Please try again or call us."
+								}}
+								{{ form_open }}
+									<h5>I want Access Winter Park to contact me about this property.</h5>
+									<input type="hidden" name="{{ url:slug }}" value="{{ url:current }}" />
+									<div class="form-group">
+										<label for="{{ name:slug }}">{{ name:label }} {{ name:required }}</label>
+										{{ name:error }}
+										<input type="text" name="{{ name:slug }}" class="form-control" placeholder="{{ name:instructions }}" />
+									</div>
+									<div class="form-group">
+										<label for="{{ email_address:slug }}">{{ email_address:label }} {{ email_address:required }}</label>
+										{{ email_address:error }}
+										<input type="email" name="{{ email_address:slug }}" class="form-control" placeholder="{{ email_address:instructions }}" />
+									</div>
+									<div class="form-group">
+										<label for="{{ phone_number:slug }}">{{ phone_number:label }} {{ phone_number:required }}</label>
+										{{ phone_number:error }}
+										<input type="text" name="{{ phone_number:slug }}" class="form-control" placeholder="{{ phone_number:instructions }}" />
+									</div>
+									<div class="form-group">
+										<label for="{{ property:slug }}">{{ property:label }} {{ property:required }}</label><br />
+										{{ property:error }}
+										{{ property:input }}
+									</div>
+									<div class="form-group">
+										<label for="{{ arrival_date:slug }}">{{ arrival_date:label }} {{ arrival_date:required }}</label><br />
+										{{ arrival_date:error }}
+										<input type="text" id="arrival_date_inquiry" name="{{ arrival_date:slug }}" class="form-control" placeholder="{{ arrival_date:instructions }}" />
+									</div>
+									<div class="form-group">
+										<label for="{{ departure_date:slug }}">{{ departure_date:label }} {{ departure_date:required }}</label><br />
+										{{ departure_date:error }}
+										<input type="text" id="departure_date_inquiry" name="{{ departure_date:slug }}" class="form-control" placeholder="{{ departure_date:instructions }}" />
+									</div>
+									<div class="row">
+										<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+											<input type="submit" class="btn btn-side-column" value="Send" />
+										</div>
+										<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+											<input type="reset" class="btn btn-side-column-cxl" data-toggle="collapse" data-target="#property-inquiry-form" aria-expanded="false" aria-controls="property-inquiry-form" value="Cancel" />
+										</div>
+									</div>
+								{{ form_close }}
+								{{ /streams:form }}
+							</div>
+						</div>
+						<!-- /Property Inquiry Form -->
+						
+						<!-- Featured Information (md & lg) -->
+						{{ streams:features sort="random" limit="2" }}
+						<div class="row aside-featured-info">
+							{{ if feature_image }}
+							<div class="col-md-12 col-lg-12">
+								<img class="img-responsive" src="{{ feature_image:image }}" alt="" />
+							</div>
+							{{ endif }}
+							<div class="col-md-12 col-lg-12">
+								<h4>{{ feature_title }}</h4>
+								<p>{{ feature_text }}</p>
+								<p><a class="btn btn-default btn-link" href="{{ feature_link_url }}">{{ feature_button_text }}</a></p>
+							</div>
+						</div>
+						{{ /streams:features }}
+						<!-- /Featured Information (md & lg) -->
+					
+					</aside>
+					<!-- /Aside (Property Preview) -->
+
+					<!-- Main -->
+					<main id="property-details" class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-12 col-md-8 col-lg-offset-1 col-lg-8">
+						<div class="row">
+							<div class="hidden-xs col-sm-12 col-md-12 col-lg-12">
+								
+								<!-- Property Details Navigation -->
+								<div class="btn-group btn-group-justified" aria-label="Property Details Navigation">
+									<a href="#photos" class="btn btn-property-details" role="button">Photos</a>
+									<a href="#overview" class="btn btn-property-details" role="button">Overview</a>
+									{{ if property_amenities }}<a href="#amenities" class="btn btn-property-details" role="button">Amenities</a>{{ endif }}
+									<a href="#rates-fees" class="btn btn-property-details" role="button">Rates & Fees</a>
+									{{ if street_address && city && state && zip_code }}<a href="#map" class="btn btn-property-details" role="button">Map</a>{{ endif }}
+								</div>
+								<!-- /Property Details Navigation -->
+							
+							</div>
+						</div>
+						<div id="photos" class="row">
+							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								
+								<!-- Property Slideshow -->
+								<div id="property-slideshow" class="carousel slide" data-ride="carousel" data-interval="false">
+									
+									<!-- Wrapper for slides -->
+									<div class="carousel-inner" role="listbox">
+										
+										<!-- Slides -->
+										{{ property_slideshow order_by="slide_name" sort="asc" }}
+										<div class="item text-center{{ if count == '1' }} active{{ endif }}">
+											<div class="image-container">
+												<img src="{{ slide_image:image }}" alt="{{ slide_caption }}" />
+											</div>
+											<div class="clearfix image-caption">
+												<p class="text-center">{{ if slide_caption }}{{ slide_caption }}{{ else }}&nbsp;{{ endif }}</p>
+											</div>
+										</div>
+										{{ /property_slideshow }}
+										<!-- /Slides -->
+										
+										<!-- Indicators -->
+										<ol class="carousel-indicators list-unstyled">
+											{{ property_slideshow sort="asc" limit="1" }}
+											<li data-target="#property-slideshow" data-slide-to="0" class="active"></li>
+											{{ /property_slideshow }}
+											{{ property_slideshow sort="asc" }}
+											{{ if count == '1' }}{{ else }}<li data-target="#property-slideshow" data-slide-to="{{ helper:count start='1' }}" class=""></li>{{ endif }}
+											{{ /property_slideshow }}
+										</ol>
+										<!-- /Indicators -->
+									
+										<!-- Slide Controls -->
+										<a class="left carousel-control text-center" href="#property-slideshow" role="button" data-slide="prev"><span class="fa fa-angle-left" aria-hidden="true"></span><span class="sr-only">Previous</span></a>
+										<a class="right carousel-control text-center" href="#property-slideshow" role="button" data-slide="next"><span class="fa fa-angle-right" aria-hidden="true"></span><span class="sr-only">Next</span></a>
+										<!-- Slide Controls -->
+									
+									</div>
+									<!-- /Wrapper for slides -->
+								
+								</div>
+								<!-- /Property Slideshow -->
+							
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-0 col-md-12 col-lg-12">
+								
+								<!-- Property Info -->
+								<h3 id="overview">Overview</h3>
+								{{ property_overview }}
+								
+								{{ if property_amenities }}
+								<h3 id="amenities">Amenities</h3>
+								{{ property_amenities }}
+								{{ endif }}
+								
+								<h3 id="rates-fees">Rates & Fees</h3>
+								{{ property_rates_fees }}
+								<!-- /Property Info -->
+								
+								{{ if street_address && city && state && zip_code }}
+								<!-- Google Map -->
+								<h3 id="map">Map</h3>
+								<iframe frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBkcwuY68At1I2dG9FMTW52jRH4JgQRE0g&q={{ helper:str_replace search=' ' replace='+' subject='{{ street_address }}' }},{{ helper:str_replace search=' ' replace='+' subject='{{ city }}' }},{{ state }}+{{ helper:sprintf format='d' string=zip_code }}" allowfullscreen></iframe>
+								<!-- /Google Map -->
+								{{ endif }}
+							
+							</div>
+						</div>
+					</main>
+					<!-- /Main -->
+				
+				</div>
+			</div>
+		</div>
+
+		{{ if property_checkfront_item_id }}
+		<!-- Checkfront -->
+		<div id="book-this-property">
+			<div id="checkfront-wrapper" class="container-fluid">
+				<div class="row">
+					
+					<!-- Checkfront Title -->
+					<div id="checkfront-title" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<h3>Book This Property</h3>
+					</div>
+					<!-- /Checkfront Title -->
+					
+					<!-- Checkfront Droplet -->
+					<div id="checkfront-droplet" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<script type="text/javascript" src="//accesswinterparklodg.checkfront.com/lib/interface--30.js"></script>
+						<!-- CHECKFRONT BOOKING PLUGIN v23-->
+						<div id="CHECKFRONT_WIDGET_01"><p id="CHECKFRONT_LOADER" style="background: url('//accesswinterparklodg.checkfront.com/images/loader.gif') left center no-repeat; padding: 5px 5px 5px 20px">Searching Availability...</p></div>
+						<script>
+							new CHECKFRONT.Widget ({
+								host: 'accesswinterparklodg.checkfront.com',
+								target: 'CHECKFRONT_WIDGET_01',
+								item_id: '{{ property_checkfront_item_id }}',
+								style: 'background-color: fff',
+								provider: 'droplet'
+							}).render();
+						</script>
+						<noscript><a href="https://accesswinterparklodg.checkfront.com/reserve/" style="font-size: 16px">Continue to Secure Booking System &raquo;</a></noscript>
+					</div>
+					<!-- /Checkfront Droplet -->
+					
+				</div>
+			</div>
+		</div>
+		<!-- /Checkfront -->
+		{{ endif }}
+		{{ /streams:properties }}";s:3:"css";s:0:"";s:2:"js";s:0:"";s:12:"theme_layout";s:9:"open.html";s:10:"updated_on";s:10:"1469835710";s:13:"save_as_files";s:1:"n";s:13:"content_label";s:0:"";s:11:"title_label";s:0:"";}s:15:"__cache_created";i:1476920883;s:20:"__cache_dependencies";a:0:{}}

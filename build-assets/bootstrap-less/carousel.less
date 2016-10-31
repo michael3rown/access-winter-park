@@ -1,0 +1,360 @@
+//
+// Carousel
+// --------------------------------------------------
+
+
+// Wrapper for the slide container and indicators
+.carousel {
+  position: relative;
+}
+
+.carousel-inner {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+
+  > .item {
+    display: none;
+    position: relative;
+    height: 240px;
+    background-color: transparent;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    .transition(.6s ease-in-out left);
+
+    @media (min-width: 558px) {
+      height: 280px;
+    }
+
+    @media (min-width: 768px) {
+      height: 350px;
+    }
+
+    @media (min-width: 992px) {
+      height: 490px;
+    }
+
+    #property-slideshow & {
+      height: auto;
+
+      .image-container {
+        height: auto;
+        max-height: 308px;
+        background-color: rgb(224,224,224);
+
+        @media (min-width: 558px) {
+          max-height: 450px;
+        }
+
+        @media (min-width: 768px) {
+          max-height: 332px;
+        }
+
+        @media (min-width: 992px) {
+          max-height: 530px;
+        }
+
+        img {
+          width: auto;
+          max-width: 100%;
+          height: auto;
+          max-height: 100%;
+          margin: 0 auto;
+        }
+      }
+    }
+
+    // WebKit CSS3 transforms for supported devices
+    @media all and (transform-3d), (-webkit-transform-3d) {
+      .transition-transform(~'0.6s ease-in-out');
+      .backface-visibility(~'hidden');
+      .perspective(1000px);
+
+      &.next,
+      &.active.right {
+        .translate3d(100%, 0, 0);
+        left: 0;
+      }
+      &.prev,
+      &.active.left {
+        .translate3d(-100%, 0, 0);
+        left: 0;
+      }
+      &.next.left,
+      &.prev.right,
+      &.active {
+        .translate3d(0, 0, 0);
+        left: 0;
+      }
+    }
+  }
+
+  > .active,
+  > .next,
+  > .prev {
+    display: block;
+  }
+
+  > .active {
+    left: 0;
+  }
+
+  > .next,
+  > .prev {
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  > .next {
+    left: 100%;
+  }
+  > .prev {
+    left: -100%;
+  }
+  > .next.left,
+  > .prev.right {
+    left: 0;
+  }
+
+  > .active.left {
+    left: -100%;
+  }
+  > .active.right {
+    left: 100%;
+  }
+
+}
+
+// Left/right controls for nav
+// ---------------------------
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  width: @carousel-control-width;
+  background-color: rgba(0, 0, 0, 0); // Fix IE9 click-thru bug
+  .opacity(@carousel-control-opacity);
+  font-size: @carousel-control-font-size;
+  line-height: 1;
+  color: @carousel-control-color;
+  text-shadow: @carousel-text-shadow;
+  border-radius: @carousel-control-width;
+  margin-top: -((@carousel-control-font-size / 2) * 1.1);
+  // We can't have this transition here because WebKit cancels the carousel
+  // animation if you trip this while in the middle of another animation.
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  -ms-transition: none;
+  transition: none;
+
+  #property-slideshow & {
+    margin-top: -((@carousel-control-font-size / 2) * 1.6);
+  }
+
+  // Set gradients for backgrounds
+  &.left {
+    left: 1%;
+  }
+
+  &.right {
+    left: auto;
+    right: 1%;
+  }
+
+  .fa {
+    font-size: @carousel-control-font-size;
+    line-height: @carousel-control-width;
+  }
+
+  // Hover/focus state
+  &:hover,
+  &:focus {
+    color: @carousel-control-color;
+    text-decoration: none;
+    outline: 0;
+    .opacity(.8);
+  }
+}
+
+// Optional indicator pips
+//
+// Add an unordered list with the following class and add a list item for each
+// slide your carousel holds.
+
+.carousel-indicators {
+  display: none;
+  z-index: 88;
+  position: absolute;
+  bottom: 9px;
+  left: 50%;
+  width: 60%;
+  margin-left: -30%;
+  padding-left: 0;
+  list-style: none;
+  text-align: center;
+
+  #property-slideshow & {
+    z-index: 75;
+    bottom: 40px;
+    left: 0;
+    width: 100%;
+    font-size: 0;
+    line-height: 0;
+    padding: 0 15px;
+    margin-top: 0;
+    margin-left: 0;
+
+    @media (min-width: 558px) {
+      display: inline-block;
+    }
+  }
+
+  li {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+    opacity: 0.5;
+    border: 2px solid @carousel-indicator-border-color;
+    border-radius: 10px;
+    margin-left: 5px;
+
+    @media (min-width: 768px) {
+      width: 10px;
+      height: 10px;
+    }
+
+    @media (min-width: 992px) {
+      width: 16px;
+      height: 16px;
+    }
+
+    @media (min-width: 1200px) {
+      width: 20px;
+      height: 20px;
+    }
+
+    // IE8-9 hack for event handling
+    //
+    // Internet Explorer 8-9 does not support clicks on elements without a set
+    // `background-color`. We cannot use `filter` since that's not viewed as a
+    // background color by the browser. Thus, a hack is needed.
+    // See https://developer.mozilla.org/en-US/docs/Web/Events/click#Internet_Explorer
+    //
+    // For IE8, we set solid black as it doesn't support `rgba()`. For IE9, we
+    // set alpha transparency for the best results possible.
+    background-color: #000 \9; // IE8
+    background-color: rgba(0,0,0,0); // IE9
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+  .active {
+    background-color: @carousel-indicator-active-bg;
+    opacity: 1.0;
+  }
+}
+
+// Optional captions
+// -----------------------------
+.carousel-title {
+  margin-top: 27px;
+
+  @media (min-width: 360px) {
+      margin-top: 54px;
+    }
+
+  @media (min-width: 558px) {
+    margin-top: 32px;
+  }
+
+  @media (min-width: 768px) {
+    margin-top: 52px;
+  }
+
+  @media (min-width: 992px) {
+    margin-top: 86px;
+  }
+}
+
+.carousel-caption {
+  z-index: 82;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 45px;
+  overflow: hidden;
+  background-color: @brand-primary-other;
+  color: @carousel-caption-color;
+
+  @media (min-width: 768px) {
+    bottom: 35px;
+    width: 100%;
+    height: 80px;
+    background-color: transparent;
+  }
+
+  @media (min-width: 1200px) {
+    &.container {width: 100%;}
+  }
+
+  .row div {
+
+    @media (min-width: 768px) {
+      width: auto;
+      height: 70px;
+      background-color: @brand-primary-other;
+      padding-top: 9px;
+      padding-right: 40px;
+      padding-left: 10%;
+      border-radius: 35px;
+      margin-left: -35px;
+      box-shadow: 4px 4px 4px rgba(6,6,6,0.5);
+    }
+
+    @media (min-width: 992px) {
+      padding-left: 8%;
+    }
+  }
+
+  p {
+    font-size: 10px;
+    line-height: 45px;
+    margin-top: 0;
+
+    @media (min-width: 360px) {
+      font-size: 12px;
+    }
+
+    @media (min-width: 558px) {
+      font-size: 15px;
+    }
+
+    @media (min-width: 768px) {
+      width: 250px;
+      line-height: 1.6;
+      text-align: left;
+    }
+  }
+
+  a { color: @carousel-caption-color; }
+}
+
+.image-caption {
+  width: 100%;
+  font-size: 12px;
+  line-height: 28px;
+  color: rgb(118,101,83);
+  border: 1px solid rgb(245,244,240);
+  margin-bottom: 1px;
+
+  p {
+    text-align: center;
+    padding: 0 15px;
+  }
+}

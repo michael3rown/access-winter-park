@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	
+	<head>
+		
+		{{ theme:partial name="head" }}
+		
+	</head>
+	
+	<body class="{{if url:current == url:base }}home{{ else }}property{{ endif }}">
+		
+		{{ theme:partial name="google-tag-manager" }}
+		
+		{{ theme:partial name="navigation" }}
+		
+		{{ theme:partial name="header" }}
+		
+		{{ if url:current == url:base }}{{ theme:partial name="header-slideshow" }}{{ else }}{{ theme:partial name="header-hero" }}{{ endif }}
+		
+		<!-- Content -->
+		
+		{{ template:body }}
+		
+		<!-- /Content -->
+		
+		{{ theme:partial name="footer" }}
+		
+		{{ theme:partial name="footer-copyright" }}
+		
+		{{ theme:partial name="footer-scripts" }}
+	
+	</body>
+
+</html>

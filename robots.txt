@@ -1,0 +1,15 @@
+User-agent: *
+
+Disallow: .ftpquota
+Disallow: /addons/
+Disallow: /assets/
+Disallow: /build/
+Disallow: /cgi-bin/
+Disallow: compat.php
+Disallow: error_log
+Disallow: phpdoc.dist.xml
+Disallow: PyroLicense
+Disallow: PyroReadMe.md
+Disallow: /system/
+Disallow: /tests/
+Disallow: /uploads/

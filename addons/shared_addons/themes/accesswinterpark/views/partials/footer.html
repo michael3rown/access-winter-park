@@ -1,0 +1,116 @@
+		<!-- Footer -->
+		<footer id="footer" class="position-relative text-left">
+			<div class="container">
+				<div class="row">
+					
+					<!-- Social Navigation Container -->
+					<div id="navigation-social" class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-6 col-md-4 col-lg-3">
+						
+						<!-- Logo -->
+						<a class="logo-container" href="{{ url:base }}">{{ theme:image file="logo-white.png" class="img-responsive" alt="Access Winter Park" }}</a>
+						<!-- /Logo -->
+						
+						<h4>Stay Connected</h4>
+						
+						<!-- Social Navigation -->
+						<ul class="clearfix list-unstyled">
+							{{ if variables:facebook != "" }}<li><a href="{{ variables:facebook }}" target="_blank"><span class="fa fa-facebook-official" aria-hidden="true" title="Facebook"></span><span class="sr-only">Facebook</span></a></li>{{ endif }}
+							{{ if variables:googleplus != "" }}<li><a href="{{ variables:googleplus }}" target="_blank"><span class="fa fa-google-plus-square" aria-hidden="true" title="Google+"></span><span class="sr-only">Google+</span></a></li>{{ endif }}
+							{{ if variables:twitter != "" }}<li><a href="{{ variables:twitter }}" target="_blank"><span class="fa fa-twitter-square" aria-hidden="true" title="Twitter"></span><span class="sr-only">Twitter</span></a></li>{{ endif }}
+							{{ if variables:youtube != "" }}<li><a href="{{ variables:youtube }}" target="_blank"><span class="fa fa-youtube-square" aria-hidden="true" title="YouTube"></span><span class="sr-only">YouTube</span></a></li>{{ endif }}
+						</ul>
+						<!-- /Social Navigation -->
+						
+					</div>
+					<!-- /Social Navigation Container -->
+					
+					<!-- Highlight Box -->
+					<div id="highlight-box" class="visible-lg-block col-lg-3">
+						{{ streams:footer_highlight limit="1" }}
+						<h4>{{ highlight_title }}</h4>
+						<p>{{ highlight_text }}{{ if highlight_button_text && highlight_button_url }}<br /><a class="btn btn-opposite btn-link" href="{{ highlight_button_url }}">{{ highlight_button_text }}</a>{{ endif }}</p>
+						{{ /streams:footer_highlight }}
+					</div>
+					<!-- /Highlight Box -->
+					
+					<!-- Contact Us Information -->
+					<div id="contact-us-info" class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-6 col-md-4 col-lg-3">
+						<h4>Contact Us</h4>
+						<p>
+							<b>Office/Cell:</b><br />
+							<a href="tel:{{ variables:phone }}">{{ variables:phone }}</a>
+						</p>
+						<p>
+							<b>Toll-Free Fax:</b><br />
+							{{ variables:fax }}
+						</p>
+						<p>
+							<b>Email Address:</b><br />
+							<a href="mailto:{{ variables:email }}">{{ variables:email }}</a>
+						</p>
+						<p>
+							<b>Mailing Address:</b><br />
+							{{ variables:address_street }}<span class="conditional-break">, </span><br class="conditional-break" />{{ variables:address_city }}, {{ variables:address_state }} {{ variables:address_zip }}
+						</p>
+					
+					</div>
+					<!-- /Contact Us Information -->
+					
+					<!-- Contact Us Form -->
+					<div id="contact-us-form" class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-12 col-md-4 col-lg-3">
+						<h4>Send a Message</h4>
+						{{ streams:form
+							stream="contact_us"
+							form_id="contact_us"
+							mode="new"
+							required="*"
+							use_recaptcha="yes"
+							error_start="<p class=\"red\">("
+							error_end=")</p>"
+							notify_a="accesswinterpark@me.com"
+							notify_from_a="noreply@accesswinterpark.com|Access Winter Park"
+							notify_template_a="contact-us"
+							return="/thank-you"
+							success_message="Your message has been sent successfully. Thank you."
+							failure_message="There were errors with the information you submitted. All fields are required. Please try again or call us."
+						}}
+						{{ form_open }}
+							<input type="hidden" name="{{ url:slug }}" value="{{ url:current }}" />
+							<div class="form-group">
+								<label for="{{ name:slug }}">{{ name:label }} {{ name:required }}</label>
+								{{ name:error }}
+								<input type="text" name="{{ name:slug }}" class="form-control" placeholder="{{ name:instructions }}" />
+							</div>
+							<div class="form-group">
+								<label for="{{ email_address:slug }}">{{ email_address:label }} {{ email_address:required }}</label>
+								{{ email_address:error }}
+								<input type="email" name="{{ email_address:slug }}" class="form-control" placeholder="{{ email_address:instructions }}" />
+							</div>
+							<div class="form-group">
+								<label for="{{ arrival_date:slug }}">{{ arrival_date:label }}</label><br />
+								<input type="text" id="arrival_date" name="{{ arrival_date:slug }}" class="form-control" placeholder="{{ arrival_date:instructions }}" />
+							</div>
+							<div class="form-group">
+								<label for="{{ departure_date:slug }}">{{ departure_date:label }}</label><br />
+								<input type="text" id="departure_date" name="{{ departure_date:slug }}" class="form-control" placeholder="{{ departure_date:instructions }}" />
+							</div>
+							<div class="form-group">
+								<label for="{{ message:slug }}">How Can We Help? {{ message:required }}</label>
+								{{ message:error }}
+								<textarea name="{{ message:slug }}" class="form-control" placeholder="{{ message:instructions }}" rows="5"></textarea>
+							</div>
+							<div class="form-group">
+								<label for="recaptcha">Are you a robot? *</label>
+								{{ recaptcha_error }}
+								{{ recaptcha }}
+							</div>
+							<input type="submit" class="btn btn-opposite" value="Send" />
+						{{ form_close }}
+						{{ /streams:form }}
+					</div>
+					<!-- /Contact Us Form -->
+					
+				</div>
+			</div>
+		</footer>
+		<!-- /Footer -->

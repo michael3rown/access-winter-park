@@ -1,0 +1,25 @@
+{
+  "name": "access-winter-park",
+  "version": "1.0.0",
+  "description": "Website repository for Access Winter Park.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Michael Brown/NetBiz, Inc.",
+  "license": "",
+  "repository": {
+    "type": "git",
+    "url": "https://michael3rown@bitbucket.org/michael3rown/access-winter-park.git"
+  },
+  "homepage": "https://www.accesswinterpark.com",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.13",
+    "gulp-less": "^3.1.0",
+    "gulp-rename": "^1.2.2"
+  }
+}

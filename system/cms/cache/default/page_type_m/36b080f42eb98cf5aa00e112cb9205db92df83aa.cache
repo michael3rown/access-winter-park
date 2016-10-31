@@ -1,0 +1,45 @@
+a:3:{s:16:"__cache_contents";O:8:"stdClass":16:{s:2:"id";s:2:"20";s:4:"slug";s:4:"news";s:5:"title";s:4:"News";s:11:"description";s:113:"DO NOT USE this layout. It functions based upon data from a reffering URL. It displays news from the News stream.";s:9:"stream_id";s:2:"29";s:10:"meta_title";s:0:"";s:13:"meta_keywords";N;s:16:"meta_description";s:0:"";s:4:"body";s:1834:"<!-- Main -->
+					<main class="col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10 col-md-offset-0 col-md-8 col-md-push-4 col-lg-offset-1 col-lg-8 col-lg-push-3">
+					
+					{{ streams:news_posts paginate="yes" pag_segment="2" limit="10" }}
+					
+					{{ entries }}
+					<article class="post">
+						{{ if news_post_image }}<a class="post-image" href="/article/{{ news_post_slug }}"><img class="img-responsive" src="{{ news_post_image:image }}" alt="" /></a>{{ endif }}
+						<h3><a href="/article/{{ news_post_slug }}">{{ news_post_title }}</a></h3>
+						<h6>Posted: {{ helper:date timestamp=created }}</h6>
+						<p>{{ limit:words text='{{ news_post }}' words='30' ending=' ... <a href="/article/{{ news_post_slug }}">Read More</a>' }}</p>
+					</article>
+					{{ /entries }}
+					
+					{{ pagination }}
+
+					{{ /streams:news_posts }}
+					
+					</main>
+					<!-- /Main -->
+					
+					<!-- Aside (Default) -->
+					<aside id="default" class="col-xs-12 col-sm-12 col-md-4 col-md-pull-8 col-lg-3 col-lg-pull-9">
+					
+						{{ theme:partial name="aside-properties-subnav" }}
+						
+						<!-- Featured Information -->
+						{{ streams:features sort="random" limit="2" }}
+						<div class="row aside-featured-info">
+							{{ if feature_image }}
+							<div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-6 col-md-12 col-lg-12">
+								<img class="img-responsive" src="{{ feature_image:image }}" alt="" />
+							</div>
+							{{ endif }}
+							<div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-6 col-md-12 col-lg-12">
+								<h4>{{ feature_title }}</h4>
+								<p>{{ feature_text }}</p>
+								<p><a href="{{ feature_link_url }}">{{ feature_link_text }}</a></p>
+							</div>
+						</div>
+						{{ /streams:features }}
+						<!-- /Featured Information -->
+					
+					</aside>
+					<!-- /Aside (Default) -->";s:3:"css";s:0:"";s:2:"js";s:0:"";s:12:"theme_layout";s:12:"default.html";s:10:"updated_on";s:10:"1476896154";s:13:"save_as_files";s:1:"n";s:13:"content_label";s:0:"";s:11:"title_label";s:0:"";}s:15:"__cache_created";i:1476980897;s:20:"__cache_dependencies";a:0:{}}

@@ -1,0 +1,24 @@
+a:3:{s:16:"__cache_contents";O:8:"stdClass":16:{s:2:"id";s:2:"21";s:4:"slug";s:7:"article";s:5:"title";s:7:"Article";s:11:"description";s:122:"DO NOT USE this layout. It functions based upon data from a reffering URL. It displays News articles from the News stream.";s:9:"stream_id";s:2:"30";s:10:"meta_title";s:0:"";s:13:"meta_keywords";N;s:16:"meta_description";s:0:"";s:4:"body";s:960:"<!-- Main -->
+					<main class="col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10 col-md-offset-0 col-md-8 col-md-push-4 col-lg-offset-1 col-lg-8 col-lg-push-3">
+
+					{{ streams:news_posts limit="1" include_by="news_post_slug" include="[segment_2]" }}
+					<article class="post">
+						{{ if news_post_image }}<img class="img-responsive" src="{{ news_post_image:image }}" alt="" />{{ endif }}
+						<h3>{{ news_post_title }}</h3>
+						<h6>Posted: {{ helper:date timestamp=created }}</h6>
+						{{ news_post }}
+					</article>
+					{{ /streams:news_posts }}
+
+					<p><a class="btn btn-side-column btn-link" href="javascript:window.history.go(-1);">Back to News</a></p>
+					
+					</main>
+					<!-- /Main -->
+					
+					<!-- Aside (Default) -->
+					<aside id="default" class="col-xs-12 col-sm-12 col-md-4 col-md-pull-8 col-lg-3 col-lg-pull-9">
+					
+						{{ theme:partial name="aside-properties-subnav" }}
+					
+					</aside>
+					<!-- /Aside (Default) -->";s:3:"css";s:0:"";s:2:"js";s:0:"";s:12:"theme_layout";s:12:"default.html";s:10:"updated_on";s:10:"1476920431";s:13:"save_as_files";s:1:"n";s:13:"content_label";s:0:"";s:11:"title_label";s:0:"";}s:15:"__cache_created";i:1476920440;s:20:"__cache_dependencies";a:0:{}}

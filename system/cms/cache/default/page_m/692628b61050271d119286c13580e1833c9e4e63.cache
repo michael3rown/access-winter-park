@@ -1,0 +1,36 @@
+a:3:{s:16:"__cache_contents";O:8:"stdClass":37:{s:2:"id";s:2:"21";s:7:"created";i:1464105854;s:7:"updated";b:0;s:14:"ordering_count";s:1:"1";s:9:"page_hero";a:20:{s:2:"id";s:15:"b82fcceec2bca13";s:9:"folder_id";s:1:"4";s:7:"user_id";s:1:"1";s:4:"type";s:1:"i";s:4:"name";s:14:"other-hero.jpg";s:8:"filename";s:36:"e5fcfd7df86886e150b3ffc2a9f3f3b7.jpg";s:4:"path";s:62:"{{ url:site }}files/large/e5fcfd7df86886e150b3ffc2a9f3f3b7.jpg";s:11:"description";s:0:"";s:9:"extension";s:4:".jpg";s:8:"mimetype";s:10:"image/jpeg";s:8:"keywords";s:0:"";s:5:"width";s:4:"1400";s:6:"height";s:3:"280";s:8:"filesize";s:2:"88";s:13:"alt_attribute";s:0:"";s:14:"download_count";s:1:"1";s:10:"date_added";s:10:"1463693973";s:4:"sort";s:1:"0";s:11:"folder_name";s:11:"Header Hero";s:11:"folder_slug";s:11:"header-hero";}s:12:"page_content";s:253:"<span style="font-size: 13px;">We cannot find the page you are looking for, please click&nbsp;</span><a href="https://accesswinterpark.com/" style="font-size: 13px;" title="Home">here</a><span style="font-size: 13px;">&nbsp;to go to the homepage.</span>";s:32:"display_properties_subnavigation";a:3:{s:3:"key";s:3:"yes";s:3:"val";s:3:"Yes";s:5:"value";s:3:"Yes";}s:16:"display_features";a:3:{s:3:"key";s:2:"no";s:3:"val";s:2:"No";s:5:"value";s:2:"No";}s:10:"created_by";a:4:{s:7:"user_id";s:1:"1";s:5:"email";s:24:"michael.brown@netbiz.com";s:8:"username";s:12:"michael3rown";s:12:"display_name";s:13:"Michael Brown";}s:4:"last";s:1:"1";s:8:"odd_even";s:3:"odd";s:5:"count";i:1;s:4:"slug";s:3:"404";s:5:"class";s:0:"";s:5:"title";s:3:"404";s:3:"uri";s:3:"404";s:9:"parent_id";s:1:"0";s:7:"type_id";s:2:"14";s:8:"entry_id";s:1:"1";s:3:"css";s:0:"";s:2:"js";s:0:"";s:10:"meta_title";s:0:"";s:13:"meta_keywords";s:0:"";s:20:"meta_robots_no_index";s:1:"0";s:21:"meta_robots_no_follow";s:1:"0";s:16:"meta_description";s:0:"";s:11:"rss_enabled";s:1:"0";s:16:"comments_enabled";s:1:"0";s:6:"status";s:4:"live";s:10:"created_on";s:10:"1464105854";s:10:"updated_on";s:1:"0";s:13:"restricted_to";s:1:"0";s:7:"is_home";s:1:"0";s:10:"strict_uri";s:1:"1";s:5:"order";s:1:"0";s:8:"base_uri";s:3:"404";s:6:"layout";O:8:"stdClass":16:{s:2:"id";s:2:"14";s:4:"slug";s:8:"standard";s:5:"title";s:8:"Standard";s:11:"description";s:36:"The default 2-column content layout.";s:9:"stream_id";s:2:"22";s:10:"meta_title";s:0:"";s:13:"meta_keywords";N;s:16:"meta_description";s:0:"";s:4:"body";s:1330:"<!-- Main -->
+					<main class="col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10 col-md-offset-0 col-md-8 col-md-push-4 col-lg-offset-1 col-lg-8 col-lg-push-3">
+
+						{{ page_content }}
+
+					</main>
+					<!-- /Main -->
+
+					<!-- Aside (Default) -->
+					<aside id="default" class="col-xs-12 col-sm-12 col-md-4 col-md-pull-8 col-lg-3 col-lg-pull-9">
+						
+						{{ if display_properties_subnavigation:key == 'yes' }}{{ theme:partial name="aside-properties-subnav" }}{{ endif }}
+						
+						{{ if display_features:key == 'yes' }}
+						
+						<!-- Featured Information -->
+						{{ features_select sort="random" order_by="feature_title" }}
+						<div class="row aside-featured-info">
+							{{ if feature_image }}
+							<div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-6 col-md-12 col-lg-12">
+								<img class="img-responsive" src="{{ feature_image:image }}" alt="" />
+							</div>
+							{{ endif }}
+							<div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-6 col-md-12 col-lg-12">
+								<h4>{{ feature_title }}</h4>
+								<p>{{ feature_text }}</p>
+								<p><a href="{{ feature_link_url }}">{{ feature_link_text }}</a></p>
+							</div>
+						</div>
+						{{ /features_select }}
+						<!-- /Featured Information -->
+						
+						{{ endif }}
+					
+					</aside>
+					<!-- /Aside (Default) -->";s:3:"css";s:0:"";s:2:"js";s:0:"";s:12:"theme_layout";s:12:"default.html";s:10:"updated_on";s:10:"1464114492";s:13:"save_as_files";s:1:"n";s:13:"content_label";s:0:"";s:11:"title_label";s:0:"";}}s:15:"__cache_created";i:1477149396;s:20:"__cache_dependencies";a:0:{}}
