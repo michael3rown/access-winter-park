@@ -3,6 +3,14 @@
 .localized
 Thumbs.db
 
+# Hosting ignores
+/.ftpquota
+/cgi-bin
+/error_log
+
+# Ignore database archive
+/database
+
 # Ignore database settings
 system/cms/config/database.*
 
