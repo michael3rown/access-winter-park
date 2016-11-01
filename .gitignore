@@ -8,6 +8,9 @@ Thumbs.db
 /cgi-bin
 /error_log
 
+# Ignore .htaccess to avoid environment issues
+/.htaccess
+
 # Ignore database archive
 /database
 
