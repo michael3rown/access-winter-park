@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://bitbucket.org/michael3rown/access-winter-park/issues"
   },
-  "homepage": "https://www.accesswinterpark.com",
+  "homepage": "https://bitbucket.org/michael3rown/access-winter-park",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-clean-css": "^2.0.13",
