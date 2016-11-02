@@ -11,11 +11,11 @@ Thumbs.db
 # Ignore .htaccess to avoid environment issues
 /.htaccess
 
-# Ignore database archive
-/database
+# Ignore uploads folder
+/uploads
 
 # Ignore database settings
-system/cms/config/database.*
+system/cms/config/database.php
 
 # Ignore CMS logs
 system/cms/logs/log-*.php

@@ -1,8 +1,18 @@
-# Access Winter Park
-***
+Access Winter Park
+===
 
 Visit the website at: [www.accesswinterpark.com](https://www.accesswinterpark.com)
 
-## Copyright
+Notes
+---
+
+You will need the following to create a full functioning website from this repository:
+
+* Uploads folder [uploads].
+* database.php file [system/cms/config/database.php].
+* The websites database.
+
+Copyright
+---
 
 Code and documentation Copyright 2016 Access Winter Park.
