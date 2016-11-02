@@ -8,6 +8,7 @@ Notes
 
 You will need the following to create a full functioning website from this repository:
 
+* .htaccess file [.htaccess].
 * Uploads folder [uploads].
 * database.php file [system/cms/config/database.php].
 * The websites database.
