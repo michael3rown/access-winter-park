@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Michael Brown/NetBiz, Inc.",
-  "license": "",
+  "license": "UNLICENSED",
   "repository": {
     "type": "git",
     "url": "https://michael3rown@bitbucket.org/michael3rown/access-winter-park.git"
