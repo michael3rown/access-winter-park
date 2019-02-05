@@ -10,15 +10,12 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Michael Brown/NetBiz, Inc.",
-  "license": "UNLICENSED",
+  "license": "Private",
   "repository": {
     "type": "git",
-    "url": "https://michael3rown@bitbucket.org/michael3rown/access-winter-park.git"
+    "url": "https://github.com/michael3rown/access-winter-park.git"
   },
-  "bugs": {
-    "url": "https://bitbucket.org/michael3rown/access-winter-park/issues"
-  },
-  "homepage": "https://bitbucket.org/michael3rown/access-winter-park",
+  "homepage": "https://www.accesswinterpark.com",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-clean-css": "^2.0.13",

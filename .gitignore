@@ -19,3 +19,6 @@ system/cms/config/database.php
 
 # Ignore CMS logs
 system/cms/logs/log-*.php
+
+# Ignore node_modules
+node_modules/
